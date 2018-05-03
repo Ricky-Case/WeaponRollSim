@@ -175,9 +175,9 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 
 	std::cout << "Pistol -- " << name << std::endl << std::endl;
 
-	std::cout	<< " ___|______ \n"
-				<< " \\_________|\n"
-				<< "    ||        ";
+	std::cout << " ___|______ \n"
+		<< " \\_________|\n"
+		<< "    ||        ";
 	std::cout << std::endl << std::endl;
 
 	for (int32 perkNum = 0; perkNum < 5; perkNum++)
@@ -298,10 +298,10 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 
 	std::cout << "Rifle -- " << name << std::endl << std::endl;
 
-	std::cout	<< "       ___          \n"
-				<< " _____|___|________ \n"
-				<< " \\_________________|\n"
-				<< "      ||              ";
+	std::cout << "       ___          \n"
+		<< " _____|___|________ \n"
+		<< " \\_________________|\n"
+		<< "      ||              ";
 	std::cout << std::endl << std::endl;
 
 	for (int32 perkNum = 0; perkNum < 5; perkNum++)
@@ -422,10 +422,10 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 
 	std::cout << "Rocket Launcher -- " << name << std::endl << std::endl;
 
-	std::cout	<< "        ___      \n"
-				<< " ______|   |____ \n"
-				<< " \\_____|   |____|\n"
-				<< "       |___|       ";
+	std::cout << "        ___      \n"
+		<< " ______|   |____ \n"
+		<< " \\_____|   |____|\n"
+		<< "       |___|       ";
 	std::cout << std::endl << std::endl;
 
 	for (int32 perkNum = 0; perkNum < 5; perkNum++)
@@ -546,17 +546,17 @@ void Sword::PrintPerks(char perks[], Sword sword)
 
 	std::cout << "Sword -- " << name << std::endl << std::endl;
 
-	std::cout	<< "     /\\    \n"
-				<< "    |  |   \n"
-				<< "    |  |   \n"
-				<< "    |  |   \n"
-				<< "    |  |   \n"
-				<< "    |  |   \n"
-				<< " ___|  |___\n"
-				<< " \\__|__|__/\n"
-				<< "     ||    \n"
-				<< "     ||    \n" 
-				<< "     ()      ";
+	std::cout << "     /\\    \n"
+		<< "    |  |   \n"
+		<< "    |  |   \n"
+		<< "    |  |   \n"
+		<< "    |  |   \n"
+		<< "    |  |   \n"
+		<< " ___|  |___\n"
+		<< " \\__|__|__/\n"
+		<< "     ||    \n"
+		<< "     ||    \n" 
+		<< "     ()      ";
 	std::cout << std::endl << std::endl;
 
 	for (int32 perkNum = 0; perkNum < 5; perkNum++)
