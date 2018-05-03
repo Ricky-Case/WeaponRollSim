@@ -20,7 +20,8 @@ class Weapon
 public:
 	//Function Declarations...
 	int32 DeterminePerk();
-	void PrintWeapon(WeaponTypes type, char perks[]);
+	int32 GetName();
+	void GetWeapon(WeaponTypes type, char perks[]);
 	WeaponTypes DetermineWeaponType();
 
 private:
@@ -29,9 +30,33 @@ private:
 	FText weaponType;
 };
 
-//Instantiations...
 
-class Rifle : public Weapon { public: FText GetPerks(char perks); };
-class Pistol : public Weapon { public: FText GetPerks(char perks); };
-class RocketLauncher : public Weapon { public: FText GetPerks(char perks); };
-class Sword : public Weapon { public: FText GetPerks(char perks); };
+//Inheritances...
+
+class Pistol : public Weapon
+{
+public:
+	FText GetPerks(char perks, FText name);
+	void PrintPerks(char perks[], Pistol pistol);
+};
+
+class Rifle : public Weapon
+{
+public:
+	FText GetPerks(char perks, FText name);
+	void PrintPerks(char perks[], Rifle rifle);
+};
+
+class RocketLauncher : public Weapon
+{
+public:
+	FText GetPerks(char perks, FText name);
+	void PrintPerks(char perks[], RocketLauncher rocketLauncher);
+};
+
+class Sword : public Weapon
+{
+public:
+	FText GetPerks(char perks, FText name);
+	void PrintPerks(char perks[], Sword sword);
+};
