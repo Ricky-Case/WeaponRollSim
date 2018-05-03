@@ -20,8 +20,8 @@ class Weapon
 public:
 	//Function Declarations...
 	int32 DeterminePerk();
-	int32 GetName();
-	void GetWeapon(WeaponTypes type, char perks[]);
+	int32 GetNameNum();
+	void GetWeapon(WeaponTypes type);
 	WeaponTypes DetermineWeaponType();
 
 private:
