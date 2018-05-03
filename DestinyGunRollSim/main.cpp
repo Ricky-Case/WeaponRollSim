@@ -56,25 +56,12 @@ int main()
 void PlayGame()
 {
 	char response;
-	int32 perks[5] = {1, 1, 1, 1, 1};
 
 	do
 	{
 		WeaponTypes type = weapon.DetermineWeaponType();
 
-		//Each weapon has five perks, three of which need to be random.
-		for (int32 perk = 0; perk < 5; perk++)
-		{
-			perks[perk] = weapon.DeterminePerk();
-		}
-		char charPerks[5];
-		charPerks[0] = perks[0];
-		charPerks[1] = perks[1];
-		charPerks[2] = perks[2];
-		charPerks[3] = perks[3];
-		charPerks[4] = perks[4];
-
-		weapon.GetWeapon(type, charPerks);
+		weapon.GetWeapon(type);
 
 		response = PlayAgain();
 	} while (response == 'Y');
