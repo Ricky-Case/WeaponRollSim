@@ -47,6 +47,9 @@ int main()
 		}
 	} while (iterator != 0);
 
+	FText end;
+	std::cout << "\n\nPress 'ENTER' to exit.";
+	getline(std::cin, end);
 	return 0;
 }
 
@@ -71,7 +74,7 @@ void PlayGame()
 		charPerks[3] = perks[3];
 		charPerks[4] = perks[4];
 
-		weapon.PrintWeapon(type, charPerks);
+		weapon.GetWeapon(type, charPerks);
 
 		response = PlayAgain();
 	} while (response == 'Y');
@@ -93,7 +96,7 @@ char PlayAgain()
 		}
 		else if (toupper(response[0]) == 'N')
 		{
-			std::cout << "\nOkay. Take care, Guardian. You're keeping the city safe.\n\n";
+			std::cout << "\nTake care, Guardian. You're keeping the city safe.\n\n";
 		}
 		else
 		{
