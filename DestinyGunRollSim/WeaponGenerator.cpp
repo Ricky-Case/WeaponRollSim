@@ -34,37 +34,6 @@ WeaponTypes Weapon::DetermineWeaponType()
 	return weaponType;
 }
 
-//Roll for a random perks.
-int32 Weapon::DeterminePerk()
-{
-	int32 perk;
-
-	int32 perkDetermination = (rand() % 1000);
-	
-	if (perkDetermination < 200)
-	{
-		perk = 1;
-	}
-	else if (perkDetermination >= 200 && perkDetermination < 400)
-	{
-		perk = 2;
-	}
-	else if (perkDetermination >= 400 && perkDetermination < 600)
-	{
-		perk = 3;
-	}
-	else if (perkDetermination >= 600 && perkDetermination < 800)
-	{
-		perk = 4;
-	}
-	else
-	{
-		perk = 5;
-	}
-	
-	return perk;
-}
-
 int32 Weapon::GetNameNum() { return (((rand() % 100) + (rand() % 100)) / 2); }
 
 //Print the weapon to the console, in a way that the user can read the information.
