@@ -19,7 +19,6 @@ class Weapon
 {
 public:
 	//Function Declarations...
-	int32 DeterminePerk();
 	int32 GetNameNum();
 	void GetWeapon(WeaponTypes type);
 	WeaponTypes DetermineWeaponType();
