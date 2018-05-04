@@ -1,11 +1,12 @@
 /*
 Destiny Gun Random Roll Simulator.
-This app is for me to personally see just how difficult it would be (in theory) to implement random weapon rolls into a game like Destiny.
+This app is for me to personally see how difficult it would be (in theory) to implement random weapon rolls into a game like Destiny.
 I'm doing this because the lack of weapon rolls is one of my main points of frustration with Destiny 2.
 */
 
 #include <iostream>
 #include <string>
+#include <ctime>
 #include "WeaponGenerator.h"
 
 using int32 = int;
@@ -22,6 +23,8 @@ int main()
 {
 	FText response;
 	int32 iterator = 1;
+
+	srand(time(NULL));
 
 	//Prompt the user to activate the roll.
 	std::cout << "Do you want to roll a weapon? (Y/N) -- ";
