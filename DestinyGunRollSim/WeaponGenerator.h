@@ -25,7 +25,6 @@ public:
 
 private:
 	//Variable Declarations...
-	int32 weaponPerks[5];
 	FText weaponType;
 };
 
