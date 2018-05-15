@@ -90,7 +90,7 @@ char PlayAgain()
 		}
 		else
 		{
-			std::cout << "\nThat was not a valid response.\n";
+			std::cout << "\nPlease enter a valid response.\n";
 		}
 	} while (toupper(response[0]) != 'Y' && toupper(response[0]) != 'N');
 
