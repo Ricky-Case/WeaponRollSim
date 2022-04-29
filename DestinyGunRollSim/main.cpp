@@ -21,32 +21,37 @@ int main()
 	srand(time(NULL));
 
 	//Prompt the user to activate the roll.
-	std::cout << "Do you want to roll a weapon? (Y/N) -- ";
+	std::cout << clearTerminal
+		<< promptRollWeapon;
 
 	do
 	{
+		std::cout << promptInput;
 		getline(std::cin, response);
 
 		if (toupper(response[0]) == 'Y')
 		{
-			std::cout << "\nExcellent, Guardian! I'll se you on the battlefield!\n\n";
+			std::cout << clearTerminal
+				<< promptDoRestart;
 			PlayGame();
 			iterator = 0;
 		}
 		else if (toupper(response[0]) == 'N')
 		{
-			std::cout << "\nThat's too bad... We'll see you later, Guardian.";
+			std::cout << clearTerminal
+				<< promptDontRestart;
 			iterator = 0;
 		}
 		else
 		{
-			std::cout << "\nPlease enter a valid response.\n";
+			std::cout << clearTerminal
+				<< alertInvalidInput;
 		}
 	} while (iterator != 0);
 
-	std::string end;
-	std::cout << "\n\nPress 'ENTER' to exit.";
-	getline(std::cin, end);
+	std::string blankInput;
+	std::cout << promptExit;
+	getline(std::cin, blankInput);
 	return 0;
 }
 
@@ -68,7 +73,9 @@ char PlayAgain()
 {
 	std::string response;
 
-	std::cout << "\n\nWould you like to play again? ";
+	std::cout << clearTerminal
+		<< promptGoAgain
+		<< promptInput;
 
 	do
 	{
@@ -76,15 +83,18 @@ char PlayAgain()
 
 		if (toupper(response[0]) == 'Y')
 		{
-			std::cout << "\nI hope you enjoy this as much as I do, Guardian!\n\n";
+			std::cout << clearTerminal
+				<< promptEnjoy;
 		}
 		else if (toupper(response[0]) == 'N')
 		{
-			std::cout << "\nTake care, Guardian. You're keeping the city safe.\n\n";
+			std::cout << clearTerminal
+				<< promptTakeCare;
 		}
 		else
 		{
-			std::cout << "\nPlease enter a valid response.\n";
+			std::cout << clearTerminal
+				<< alertInvalidInput;
 		}
 	} while (toupper(response[0]) != 'Y' && toupper(response[0]) != 'N');
 

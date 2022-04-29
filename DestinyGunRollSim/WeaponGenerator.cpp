@@ -1,6 +1,7 @@
 #include "WeaponGenerator.h"
 
-//WEAPON FUNCTIONS DEFINITIONS----------
+
+//**********WEAPON FUNCTIONS DEFINITIONS**********//
 
 //Randomly choose a weapon type.
 WeaponTypes Weapon::DetermineWeaponType()
@@ -41,7 +42,7 @@ void Weapon::MakeWeapon(WeaponTypes type)
 	Sword sword;
 
 	std::cout << clearTerminal
-		<< HeresYourWeapon;
+		<< promptHeresYourWeapon;
 
 	if (type == WeaponTypes::Pistol)
 	{
@@ -62,36 +63,38 @@ void Weapon::MakeWeapon(WeaponTypes type)
 }
 
 
-//PISTOL FUNCTION DEFINITIONS----------
+
+
+//**********PISTOL FUNCTION DEFINITIONS**********//
 
 std::string Pistol::GetPerks(char perks, std::string name)
 {
-	if (name == "Hairpin")
+	if (name == lPistolName)
 	{
 		switch (perks)
 		{
 		//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Tripple Tap";
+			return P_tripleTap;
 			break;
 		case ('\x2'):
-			return "Des-Troy";
+			return P_desTroy;
 			break;
 		case ('\x4'):
-			return "Hallowed Be Thy Name";
+			return P_hallowedBeThyName;
 			break;
 		//Random Perks...
 		case ('\x1'):
-			return "Hold Your Horses";
+			return P_holdYourHorses;
 			break;
 		case ('\x3'):
-			return "Percussion";
+			return P_percussion;
 			break;
 		case ('\x5'):
-			return "Fun And Games";
+			return P_funAndGames;
 			break;
 		default:
-			return "Projection";
+			return P_projection;
 		}
 	}
 	else
@@ -100,13 +103,13 @@ std::string Pistol::GetPerks(char perks, std::string name)
 		{
 		//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Gold Dust";
+			return P_goldDust;
 			break;
 		case ('\x2'):
-			return "Mustache";
+			return P_mustache;
 			break;
 		case ('\x4'):
-			return "Diamond Fire";
+			return P_diamondFire;
 			break;
 		//Random Perks...
 		case ('\x1'):
@@ -131,11 +134,11 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 
 	if (nameNum <= 50)
 	{
-		name = "Hairpin";
+		name = lPistolName;
 	}
 	else
 	{
-		name = ".45 Rock";
+		name = hPistolName;
 	}
 
 	std::cout << "Pistol -- " << name << std::endl << std::endl;
@@ -185,11 +188,13 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 }
 
 
-//RIFLE FUNCTION DEFINITIONS----------
+
+
+//**********RIFLE FUNCTION DEFINITIONS**********//
 
 std::string Rifle::GetPerks(char perks, std::string name)
 {
-	if (name == "Eye of Azure")
+	if (name == lRifleName)
 	{
 		switch (perks)
 		{
@@ -254,11 +259,11 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 
 	if (nameNum <= 50)
 	{
-		name = "Eye of Azure";
+		name = lRifleName;
 	}
 	else
 	{
-		name = "The Church";
+		name = hRifleName;
 	}
 
 	std::cout << "Rifle -- " << name << std::endl << std::endl;
@@ -309,11 +314,13 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 }
 
 
-//ROCKET LAUNCHER FUNCTION DEFINITIONS----------
+
+
+//**********ROCKET LAUNCHER FUNCTION DEFINITIONS**********//
 
 std::string RocketLauncher::GetPerks(char perks, std::string name)
 {
-	if (name == "Djenty Boy")
+	if (name == lRocketName)
 	{
 		switch (perks)
 		{
@@ -378,11 +385,11 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 
 	if (nameNum <= 50)
 	{
-		name = "Djenty Boy";
+		name = lRocketName;
 	}
 	else
 	{
-		name = "AmacMillion";
+		name = hRocketName;
 	}
 
 	std::cout << "Rocket Launcher -- " << name << std::endl << std::endl;
@@ -433,11 +440,13 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 }
 
 
-//SWORD FUNCTION DEFINITIONS----------
+
+
+//**********SWORD FUNCTION DEFINITIONS**********//
 
 std::string Sword::GetPerks(char perks, std::string name)
 {
-	if (name == "Event Horizon")
+	if (name == lSwordName)
 	{
 		switch (perks)
 		{
@@ -502,11 +511,11 @@ void Sword::PrintPerks(char perks[], Sword sword)
 
 	if (nameNum <= 50)
 	{
-		name = "Event Horizon";
+		name = lSwordName;
 	}
 	else
 	{
-		name = "The DaRkLiGhT";
+		name = hSwordName;
 	}
 
 	std::cout << "Sword -- " << name << std::endl << std::endl;
