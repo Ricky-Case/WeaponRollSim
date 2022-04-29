@@ -16,9 +16,9 @@ enum class WeaponTypes
 class Weapon
 {
 public:
-	int GetNameNum();
-	void MakeWeapon(WeaponTypes type);
-	WeaponTypes DetermineWeaponType();
+	int GetNameNum() const;
+	void MakeWeapon() const;
+	WeaponTypes DetermineWeaponType() const;
 
 private:
 	std::string weaponType;
@@ -29,29 +29,29 @@ private:
 class Pistol : public Weapon
 {
 public:
-	std::string GetPerks(char perks, std::string name);
-	void PrintPerks(char perks[], Pistol pistol);
+	std::string GetPerks(char& perks, std::string& name) const;
+	void PrintPerks(char& perks[], Pistol& pistol);
 };
 
 class Rifle : public Weapon
 {
 public:
-	std::string GetPerks(char perks, std::string name);
-	void PrintPerks(char perks[], Rifle rifle);
+	std::string GetPerks(char& perks, std::string& name) const;
+	void PrintPerks(char& perks[], Rifle& rifle);
 };
 
 class RocketLauncher : public Weapon
 {
 public:
-	std::string GetPerks(char perks, std::string name);
-	void PrintPerks(char perks[], RocketLauncher rocketLauncher);
+	std::string GetPerks(char& perks, std::string& name) const;
+	void PrintPerks(char& perks[], RocketLauncher& rocketLauncher);
 };
 
 class Sword : public Weapon
 {
 public:
-	std::string GetPerks(char perks, std::string name);
-	void PrintPerks(char perks[], Sword sword);
+	std::string GetPerks(char& perks, std::string& name) const;
+	void PrintPerks(char& perks[], Sword& sword);
 };
 
 #endif

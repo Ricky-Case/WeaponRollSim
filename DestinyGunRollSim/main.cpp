@@ -61,10 +61,7 @@ void PlayGame()
 
 	do
 	{
-		WeaponTypes type = weapon.DetermineWeaponType();
-
-		weapon.MakeWeapon(type);
-
+		weapon.MakeWeapon();
 		response = PlayAgain();
 	} while (response == yes);
 }
