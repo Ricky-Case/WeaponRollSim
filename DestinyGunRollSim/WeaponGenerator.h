@@ -2,9 +2,9 @@
 #include <iostream>
 #include <string>
 
-using int32 = int;
-using FText = std::string;
-
+using string = std::string;
+using cout = std::cout;
+using endl = std::endl;
 
 enum class WeaponTypes
 {
@@ -19,13 +19,13 @@ class Weapon
 {
 public:
 	//Function Declarations...
-	int32 GetNameNum();
+	int GetNameNum();
 	void GetWeapon(WeaponTypes type);
 	WeaponTypes DetermineWeaponType();
 
 private:
 	//Variable Declarations...
-	FText weaponType;
+	string weaponType;
 };
 
 
@@ -34,27 +34,27 @@ private:
 class Pistol : public Weapon
 {
 public:
-	FText GetPerks(char perks, FText name);
+	string GetPerks(char perks, string name);
 	void PrintPerks(char perks[], Pistol pistol);
 };
 
 class Rifle : public Weapon
 {
 public:
-	FText GetPerks(char perks, FText name);
+	string GetPerks(char perks, string name);
 	void PrintPerks(char perks[], Rifle rifle);
 };
 
 class RocketLauncher : public Weapon
 {
 public:
-	FText GetPerks(char perks, FText name);
+	string GetPerks(char perks, string name);
 	void PrintPerks(char perks[], RocketLauncher rocketLauncher);
 };
 
 class Sword : public Weapon
 {
 public:
-	FText GetPerks(char perks, FText name);
+	string GetPerks(char perks, string name);
 	void PrintPerks(char perks[], Sword sword);
 };
