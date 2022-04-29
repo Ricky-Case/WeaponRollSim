@@ -32,7 +32,7 @@ WeaponTypes Weapon::DetermineWeaponType()
 int Weapon::GetNameNum() { return (((rand() % 100) + (rand() % 100)) / 2); }
 
 //Print the weapon to the console, in a way that the user can read the information.
-void Weapon::GetWeapon(WeaponTypes type)
+void Weapon::MakeWeapon(WeaponTypes type)
 {
 	char perks[5];
 	Pistol pistol;
@@ -40,7 +40,8 @@ void Weapon::GetWeapon(WeaponTypes type)
 	RocketLauncher rocketLauncher;
 	Sword sword;
 
-	std::cout << "\nHere's your weapon!\n\n";
+	std::cout << clearTerminal
+		<< HeresYourWeapon;
 
 	if (type == WeaponTypes::Pistol)
 	{

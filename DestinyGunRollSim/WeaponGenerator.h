@@ -1,5 +1,8 @@
+#ifndef WEAPONGENERATOR_H
+#define WEAPONGENERATOR_H
+
 #include <iostream>
-#include <string>
+#include "Strings.h"
 
 enum class WeaponTypes
 {
@@ -13,19 +16,16 @@ enum class WeaponTypes
 class Weapon
 {
 public:
-	//Function Declarations...
 	int GetNameNum();
-	void GetWeapon(WeaponTypes type);
+	void MakeWeapon(WeaponTypes type);
 	WeaponTypes DetermineWeaponType();
 
 private:
-	//Variable Declarations...
 	std::string weaponType;
 };
 
 
 //Inheritances...
-
 class Pistol : public Weapon
 {
 public:
@@ -53,3 +53,5 @@ public:
 	std::string GetPerks(char perks, std::string name);
 	void PrintPerks(char perks[], Sword sword);
 };
+
+#endif

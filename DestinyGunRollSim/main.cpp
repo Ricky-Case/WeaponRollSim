@@ -58,7 +58,7 @@ void PlayGame()
 	{
 		WeaponTypes type = weapon.DetermineWeaponType();
 
-		weapon.GetWeapon(type);
+		weapon.MakeWeapon(type);
 
 		response = PlayAgain();
 	} while (response == 'Y');
