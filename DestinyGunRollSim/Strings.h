@@ -59,7 +59,6 @@ const std::string promptTakeCare = "\nTake care, Guardian. You're keeping the ci
             const std::string P_tripleTap = "Tripple Tap";
             const std::string P_desTroy = "Des-Troy";
             const std::string P_hallowedBeThyName = "Hallowed Be Thy Name";
-            const std::string P_holdYourHorses = "Hold Your Horses";
         
             // HEAVY PERKS...
             const std::string P_goldDust = "Gold Dust";
@@ -70,32 +69,55 @@ const std::string promptTakeCare = "\nTake care, Guardian. You're keeping the ci
             const std::string P_percussion = "Percussion";
             const std::string P_funAndGames = "Fun And Games";
             const std::string P_projection = "Projection";
+            const std::string P_holdYourHorses = "Hold Your Horses";
          
         // RIFLES...
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
+            // LIGHT PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // HEAVY PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // SHARED PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
         
         // ROCKET LAUNCHERS...
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // HEAVY PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // SHARED PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
         
         // SWORDS...
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
-        const std::string perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // HEAVY PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+        
+            // SHARED PERKS...
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
+            const std::string P_perkName = "";
 
 #endif

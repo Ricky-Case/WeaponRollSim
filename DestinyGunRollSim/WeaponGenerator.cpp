@@ -113,16 +113,16 @@ std::string Pistol::GetPerks(char perks, std::string name)
 			break;
 		//Random Perks...
 		case ('\x1'):
-			return "Hold Your Horses";
+			return P_holdYourHorses;
 			break;
 		case ('\x3'):
-			return "Percussion";
+			return P_percussion;
 			break;
 		case ('\x5'):
-			return "Fun And Games";
+			return P_funAndGames;
 			break;
 		default:
-			return "Projection";
+			return P_projection;
 		}
 	}
 }
