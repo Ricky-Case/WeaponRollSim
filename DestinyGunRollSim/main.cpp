@@ -29,14 +29,14 @@ int main()
 		std::cout << promptInput;
 		getline(std::cin, response);
 
-		if (toupper(response[0]) == 'Y')
+		if (toupper(response[0]) == yes)
 		{
 			std::cout << clearTerminal
 				<< promptDoRestart;
 			PlayGame();
 			iterator = 0;
 		}
-		else if (toupper(response[0]) == 'N')
+		else if (toupper(response[0]) == no)
 		{
 			std::cout << clearTerminal
 				<< promptDontRestart;
@@ -66,7 +66,7 @@ void PlayGame()
 		weapon.MakeWeapon(type);
 
 		response = PlayAgain();
-	} while (response == 'Y');
+	} while (response == yes);
 }
 
 char PlayAgain()
@@ -81,12 +81,12 @@ char PlayAgain()
 	{
 		getline(std::cin, response);
 
-		if (toupper(response[0]) == 'Y')
+		if (toupper(response[0]) == yes)
 		{
 			std::cout << clearTerminal
 				<< promptEnjoy;
 		}
-		else if (toupper(response[0]) == 'N')
+		else if (toupper(response[0]) == no)
 		{
 			std::cout << clearTerminal
 				<< promptTakeCare;
@@ -96,7 +96,7 @@ char PlayAgain()
 			std::cout << clearTerminal
 				<< alertInvalidInput;
 		}
-	} while (toupper(response[0]) != 'Y' && toupper(response[0]) != 'N');
+	} while (toupper(response[0]) != yes && toupper(response[0]) != no);
 
 	return (toupper(response[0]));
 }

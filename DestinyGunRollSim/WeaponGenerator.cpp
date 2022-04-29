@@ -10,22 +10,10 @@ WeaponTypes Weapon::DetermineWeaponType()
 
 	int determination = (rand() % 1000);
 
-	if (determination < 400)
-	{
-		weaponType = WeaponTypes::Pistol;
-	}
-	else if (determination >= 400 && determination < 800)
-	{
-		weaponType = WeaponTypes::Rifle;
-	}
-	else if (determination >= 800 && determination < 900)
-	{
-		weaponType = WeaponTypes::RocketLauncher;
-	}
-	else
-	{
-		weaponType = WeaponTypes::Sword;
-	}
+	if (determination < 400) { weaponType = WeaponTypes::Pistol; }
+	else if (determination >= 400 && determination < 800) { weaponType = WeaponTypes::Rifle; }
+	else if (determination >= 800 && determination < 900) { weaponType = WeaponTypes::RocketLauncher; }
+	else { weaponType = WeaponTypes::Sword; }
 
 	return weaponType;
 }
@@ -44,22 +32,10 @@ void Weapon::MakeWeapon(WeaponTypes type)
 	std::cout << clearTerminal
 		<< promptHeresYourWeapon;
 
-	if (type == WeaponTypes::Pistol)
-	{
-		pistol.PrintPerks(perks, pistol);
-	}
-	else if (type == WeaponTypes::Rifle)
-	{
-		rifle.PrintPerks(perks, rifle);
-	}
-	else if (type == WeaponTypes::RocketLauncher)
-	{
-		rocketLauncher.PrintPerks(perks, rocketLauncher);
-	}
-	else
-	{
-		sword.PrintPerks(perks, sword);
-	}
+	if (type == WeaponTypes::Pistol) { pistol.PrintPerks(perks, pistol); }
+	else if (type == WeaponTypes::Rifle) { rifle.PrintPerks(perks, rifle); }
+	else if (type == WeaponTypes::RocketLauncher) { rocketLauncher.PrintPerks(perks, rocketLauncher); }
+	else { sword.PrintPerks(perks, sword); }
 }
 
 
@@ -132,21 +108,12 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 	int nameNum = pistol.GetNameNum();
 	std::string name;
 
-	if (nameNum <= 50)
-	{
-		name = lPistolName;
-	}
-	else
-	{
-		name = hPistolName;
-	}
+	if (nameNum <= 50) { name = lPistolName; }
+	else { name = hPistolName; }
 
-	std::cout << "Pistol -- " << name << std::endl << std::endl;
-
-	std::cout << " ___|______ \n"
-		<< " \\_________|\n"
-		<< "    ||        ";
-	std::cout << std::endl << std::endl;
+	std::cout << "Pistol -- " << name << std::endl
+		<< std::endl;
+	std::cout << pistolDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -160,27 +127,17 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 		}
 		else if (perkNum == 1)
 		{
-			if (perkGen < 50)
-			{
-				perks[perkNum] = 1;
-			}
-			else
-			{
-				perks[perkNum] = 3;
-			}
+			if (perkGen < 50) { perks[perkNum] = 1; }
+			else { perks[perkNum] = 3; }
+
 			std::string perk = pistol.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 5;
-			}
-			else
-			{
-				perks[perkNum] = 6;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 5; }
+			else { perks[perkNum] = 6; }
+
 			std::string perk = pistol.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
@@ -200,26 +157,26 @@ std::string Rifle::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Hallowed Be Thy Name";
+			return P_hallowedBeThyName;
 			break;
 		case ('\x2'):
-			return "Infinite Wisdom";
+			return P_sevenEightNine;
 			break;
 		case ('\x4'):
-			return "Player One";
+			return P_playerOne;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Seven Eight Nine";
+			return P_infiniteWisdom;
 			break;
 		case ('\x3'):
-			return "One For The Money";
+			return P_oneForTheMoney;
 			break;
 		case ('\x5'):
-			return "Orion's Belt";
+			return P_orionsBelt;
 			break;
 		default:
-			return "Hailstorm";
+			return P_hailstorm;
 		}
 	}
 	else
@@ -228,26 +185,26 @@ std::string Rifle::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Quantumn Leopard";
+			return P_quantumLeopard;
 			break;
 		case ('\x2'):
-			return "Doctor Zeus";
+			return P_doctorZeus;
 			break;
 		case ('\x4'):
-			return "Intelligent Design";
+			return P_intelligentDesign;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Seven Eight Nine";
+			return P_infiniteWisdom;
 			break;
 		case ('\x3'):
-			return "One For The Money";
+			return P_oneForTheMoney;
 			break;
 		case ('\x5'):
-			return "Orion's Belt";
+			return P_orionsBelt;
 			break;
 		default:
-			return "Hailstorm";
+			return P_hailstorm;
 		}
 	}
 }
@@ -257,22 +214,12 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 	int nameNum = rifle.GetNameNum();
 	std::string name;
 
-	if (nameNum <= 50)
-	{
-		name = lRifleName;
-	}
-	else
-	{
-		name = hRifleName;
-	}
+	if (nameNum <= 50) { name = lRifleName; }
+	else { name = hRifleName; }
 
-	std::cout << "Rifle -- " << name << std::endl << std::endl;
-
-	std::cout << "       ___          \n"
-		<< " _____|___|________ \n"
-		<< " \\_________________|\n"
-		<< "      ||              ";
-	std::cout << std::endl << std::endl;
+	std::cout << "Rifle -- " << name << std::endl
+		<< std::endl;
+	std::cout << rifleDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -286,27 +233,17 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 		}
 		else if (perkNum == 1)
 		{
-			if (perkGen < 50)
-			{
-				perks[perkNum] = 1;
-			}
-			else
-			{
-				perks[perkNum] = 3;
-			}
+			if (perkGen < 50) { perks[perkNum] = 1; }
+			else { perks[perkNum] = 3; }
+
 			std::string perk = rifle.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 5;
-			}
-			else
-			{
-				perks[perkNum] = 6;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 5; }
+			else { perks[perkNum] = 6; }
+
 			std::string perk = rifle.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
@@ -326,26 +263,26 @@ std::string RocketLauncher::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Fat Man";
+			return P_fatMan;
 			break;
 		case ('\x2'):
-			return "Fourty Two";
+			return P_fourtyTwo;
 			break;
 		case ('\x4'):
-			return "Player One";
+			return P_playerOne;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Crowd Control";
+			return P_crowdControl;
 			break;
 		case ('\x3'):
-			return "And Then There Was One";
+			return P_andThenThereWasOne;
 			break;
 		case ('\x5'):
-			return "Lightning In A Bottle";
+			return P_lightningInABottle;
 			break;
 		default:
-			return "Treason";
+			return P_treason;
 		}
 	}
 	else
@@ -354,26 +291,26 @@ std::string RocketLauncher::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Chainsmoker";
+			return P_chainsmoker;
 			break;
 		case ('\x2'):
-			return "Ballistic Fortitude";
+			return P_ballisticFortitude;
 			break;
 		case ('\x4'):
-			return "Stockhold";
+			return P_stockhold;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Crowd Control";
+			return P_crowdControl;
 			break;
 		case ('\x3'):
-			return "And Then There Was One";
+			return P_andThenThereWasOne;
 			break;
 		case ('\x5'):
-			return "Lightning In A Bottle";
+			return P_lightningInABottle;
 			break;
 		default:
-			return "Treason";
+			return P_treason;
 		}
 	}
 }
@@ -383,22 +320,12 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 	int nameNum = rocketLauncher.GetNameNum();
 	std::string name;
 
-	if (nameNum <= 50)
-	{
-		name = lRocketName;
-	}
-	else
-	{
-		name = hRocketName;
-	}
+	if (nameNum <= 50) { name = lRocketName; }
+	else { name = hRocketName; }
 
-	std::cout << "Rocket Launcher -- " << name << std::endl << std::endl;
-
-	std::cout << "        ___      \n"
-		<< " ______|   |____ \n"
-		<< " \\_____|   |____|\n"
-		<< "       |___|       ";
-	std::cout << std::endl << std::endl;
+	std::cout << "Rocket Launcher -- " << name << std::endl
+		<< std::endl;
+	std::cout << rocketLauncherDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -412,27 +339,17 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 		}
 		else if (perkNum == 1)
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 1;
-			}
-			else
-			{
-				perks[perkNum] = 3;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 1; }
+			else { perks[perkNum] = 3; }
+
 			std::string perk = rocketLauncher.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 5;
-			}
-			else
-			{
-				perks[perkNum] = 6;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 5; }
+			else { perks[perkNum] = 6; }
+
 			std::string perk = rocketLauncher.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
@@ -452,26 +369,26 @@ std::string Sword::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Double-Edged";
+			return P_doubleEdged;
 			break;
 		case ('\x2'):
-			return "Seven Eight Nine";
+			return P_sevenEightNine;
 			break;
 		case ('\x4'):
-			return "Thousand Cuts";
+			return P_thousandCuts;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Occam's Razor";
+			return P_occamsRazer;
 			break;
 		case ('\x3'):
-			return "Infinite Wisdom";
+			return P_infiniteWisdom;
 			break;
 		case ('\x5'):
-			return "Hellbringer";
+			return P_hellbringer;
 			break;
 		default:
-			return "Bloody Knuckles";
+			return P_bloodyKnuckles;
 		}
 	}
 	else
@@ -480,26 +397,26 @@ std::string Sword::GetPerks(char perks, std::string name)
 		{
 			//Pre-Chosen Perks...
 		case ('\x0'):
-			return "Shadow Dancer";
+			return P_shadowDancer;
 			break;
 		case ('\x2'):
-			return "Puppeteer";
+			return P_puppeteer;
 			break;
 		case ('\x4'):
-			return "Harrowing Slash";
+			return P_harrowingStrike;
 			break;
 			//Random Perks...
 		case ('\x1'):
-			return "Occam's Razor";
+			return P_occamsRazer;
 			break;
 		case ('\x3'):
-			return "Infinite Wisdom";
+			return P_infiniteWisdom;
 			break;
 		case ('\x5'):
-			return "Hellbringer";
+			return P_hellbringer;
 			break;
 		default:
-			return "Bloody Knuckles";
+			return P_bloodyKnuckles;
 		}
 	}
 }
@@ -509,29 +426,12 @@ void Sword::PrintPerks(char perks[], Sword sword)
 	int nameNum = sword.GetNameNum();
 	std::string name;
 
-	if (nameNum <= 50)
-	{
-		name = lSwordName;
-	}
-	else
-	{
-		name = hSwordName;
-	}
+	if (nameNum <= 50) { name = lSwordName; }
+	else { name = hSwordName; }
 
-	std::cout << "Sword -- " << name << std::endl << std::endl;
-
-	std::cout << "     /\\    \n"
-		<< "    |  |   \n"
-		<< "    |  |   \n"
-		<< "    |  |   \n"
-		<< "    |  |   \n"
-		<< "    |  |   \n"
-		<< " ___|  |___\n"
-		<< " \\__|__|__/\n"
-		<< "     ||    \n"
-		<< "     ||    \n"
-		<< "     ()      ";
-	std::cout << std::endl << std::endl;
+	std::cout << "Sword -- " << name << std::endl
+		<< std::endl;
+	std::cout << swordDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -545,27 +445,17 @@ void Sword::PrintPerks(char perks[], Sword sword)
 		}
 		else if (perkNum == 1)
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 1;
-			}
-			else
-			{
-				perks[perkNum] = 3;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 1; }
+			else { perks[perkNum] = 3; }
+
 			std::string perk = sword.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
-			if (perkGen <= 50)
-			{
-				perks[perkNum] = 5;
-			}
-			else
-			{
-				perks[perkNum] = 6;
-			}
+			if (perkGen <= 50) { perks[perkNum] = 5; }
+			else { perks[perkNum] = 6; }
+
 			std::string perk = sword.GetPerks(perks[perkNum], name);
 			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
