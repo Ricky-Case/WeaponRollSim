@@ -1,9 +1,5 @@
 #include "WeaponGenerator.h"
 
-using string = std::string;
-using cout = std::cout;
-using endl = cout;
-
 //WEAPON FUNCTIONS DEFINITIONS----------
 
 //Randomly choose a weapon type.
@@ -44,7 +40,7 @@ void Weapon::GetWeapon(WeaponTypes type)
 	RocketLauncher rocketLauncher;
 	Sword sword;
 
-	cout << "\nHere's your weapon!\n\n";
+	std::cout << "\nHere's your weapon!\n\n";
 
 	if (type == WeaponTypes::Pistol)
 	{
@@ -67,7 +63,7 @@ void Weapon::GetWeapon(WeaponTypes type)
 
 //PISTOL FUNCTION DEFINITIONS----------
 
-string Pistol::GetPerks(char perks, string name)
+std::string Pistol::GetPerks(char perks, std::string name)
 {
 	if (name == "Hairpin")
 	{
@@ -130,7 +126,7 @@ string Pistol::GetPerks(char perks, string name)
 void Pistol::PrintPerks(char perks[], Pistol pistol)
 {
 	int nameNum = pistol.GetNameNum();
-	string name;
+	std::string name;
 
 	if (nameNum <= 50)
 	{
@@ -141,12 +137,12 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 		name = ".45 Rock";
 	}
 
-	cout << "Pistol -- " << name << cout << cout;
+	std::cout << "Pistol -- " << name << std::endl << std::endl;
 
-	cout << " ___|______ \n"
+	std::cout << " ___|______ \n"
 		<< " \\_________|\n"
 		<< "    ||        ";
-	cout << cout << cout;
+	std::cout << std::endl << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -155,8 +151,8 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 		if (perkNum == 0 || perkNum == 2 || perkNum == 4)
 		{
 			perks[perkNum] = perkNum;
-			string perk = pistol.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = pistol.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else if (perkNum == 1)
 		{
@@ -168,8 +164,8 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 			{
 				perks[perkNum] = 3;
 			}
-			string perk = pistol.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = pistol.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
@@ -181,8 +177,8 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 			{
 				perks[perkNum] = 6;
 			}
-			string perk = pistol.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = pistol.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 	}
 }
@@ -190,7 +186,7 @@ void Pistol::PrintPerks(char perks[], Pistol pistol)
 
 //RIFLE FUNCTION DEFINITIONS----------
 
-string Rifle::GetPerks(char perks, string name)
+std::string Rifle::GetPerks(char perks, std::string name)
 {
 	if (name == "Eye of Azure")
 	{
@@ -253,7 +249,7 @@ string Rifle::GetPerks(char perks, string name)
 void Rifle::PrintPerks(char perks[], Rifle rifle)
 {
 	int nameNum = rifle.GetNameNum();
-	string name;
+	std::string name;
 
 	if (nameNum <= 50)
 	{
@@ -264,13 +260,13 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 		name = "The Church";
 	}
 
-	cout << "Rifle -- " << name << cout << cout;
+	std::cout << "Rifle -- " << name << std::endl << std::endl;
 
-	cout << "       ___          \n"
+	std::cout << "       ___          \n"
 		<< " _____|___|________ \n"
 		<< " \\_________________|\n"
 		<< "      ||              ";
-	cout << cout << cout;
+	std::cout << std::endl << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -279,8 +275,8 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 		if (perkNum == 0 || perkNum == 2 || perkNum == 4)
 		{
 			perks[perkNum] = perkNum;
-			string perk = rifle.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rifle.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else if (perkNum == 1)
 		{
@@ -292,8 +288,8 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 			{
 				perks[perkNum] = 3;
 			}
-			string perk = rifle.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rifle.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
@@ -305,8 +301,8 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 			{
 				perks[perkNum] = 6;
 			}
-			string perk = rifle.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rifle.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 	}
 }
@@ -314,7 +310,7 @@ void Rifle::PrintPerks(char perks[], Rifle rifle)
 
 //ROCKET LAUNCHER FUNCTION DEFINITIONS----------
 
-string RocketLauncher::GetPerks(char perks, string name)
+std::string RocketLauncher::GetPerks(char perks, std::string name)
 {
 	if (name == "Djenty Boy")
 	{
@@ -377,7 +373,7 @@ string RocketLauncher::GetPerks(char perks, string name)
 void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 {
 	int nameNum = rocketLauncher.GetNameNum();
-	string name;
+	std::string name;
 
 	if (nameNum <= 50)
 	{
@@ -388,13 +384,13 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 		name = "AmacMillion";
 	}
 
-	cout << "Rocket Launcher -- " << name << cout << cout;
+	std::cout << "Rocket Launcher -- " << name << std::endl << std::endl;
 
-	cout << "        ___      \n"
+	std::cout << "        ___      \n"
 		<< " ______|   |____ \n"
 		<< " \\_____|   |____|\n"
 		<< "       |___|       ";
-	cout << cout << cout;
+	std::cout << std::endl << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -403,8 +399,8 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 		if (perkNum == 0 || perkNum == 2 || perkNum == 4)
 		{
 			perks[perkNum] = perkNum;
-			string perk = rocketLauncher.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rocketLauncher.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else if (perkNum == 1)
 		{
@@ -416,8 +412,8 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 			{
 				perks[perkNum] = 3;
 			}
-			string perk = rocketLauncher.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rocketLauncher.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
@@ -429,8 +425,8 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 			{
 				perks[perkNum] = 6;
 			}
-			string perk = rocketLauncher.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = rocketLauncher.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 	}
 }
@@ -438,7 +434,7 @@ void RocketLauncher::PrintPerks(char perks[], RocketLauncher rocketLauncher)
 
 //SWORD FUNCTION DEFINITIONS----------
 
-string Sword::GetPerks(char perks, string name)
+std::string Sword::GetPerks(char perks, std::string name)
 {
 	if (name == "Event Horizon")
 	{
@@ -501,7 +497,7 @@ string Sword::GetPerks(char perks, string name)
 void Sword::PrintPerks(char perks[], Sword sword)
 {
 	int nameNum = sword.GetNameNum();
-	string name;
+	std::string name;
 
 	if (nameNum <= 50)
 	{
@@ -512,9 +508,9 @@ void Sword::PrintPerks(char perks[], Sword sword)
 		name = "The DaRkLiGhT";
 	}
 
-	cout << "Sword -- " << name << cout << cout;
+	std::cout << "Sword -- " << name << std::endl << std::endl;
 
-	cout << "     /\\    \n"
+	std::cout << "     /\\    \n"
 		<< "    |  |   \n"
 		<< "    |  |   \n"
 		<< "    |  |   \n"
@@ -525,7 +521,7 @@ void Sword::PrintPerks(char perks[], Sword sword)
 		<< "     ||    \n"
 		<< "     ||    \n"
 		<< "     ()      ";
-	cout << cout << cout;
+	std::cout << std::endl << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
 	{
@@ -534,8 +530,8 @@ void Sword::PrintPerks(char perks[], Sword sword)
 		if (perkNum == 0 || perkNum == 2 || perkNum == 4)
 		{
 			perks[perkNum] = perkNum;
-			string perk = sword.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = sword.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else if (perkNum == 1)
 		{
@@ -547,8 +543,8 @@ void Sword::PrintPerks(char perks[], Sword sword)
 			{
 				perks[perkNum] = 3;
 			}
-			string perk = sword.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = sword.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 		else
 		{
@@ -560,8 +556,8 @@ void Sword::PrintPerks(char perks[], Sword sword)
 			{
 				perks[perkNum] = 6;
 			}
-			string perk = sword.GetPerks(perks[perkNum], name);
-			cout << "Perk" << perkNum + 1 << ": " << perk << cout;
+			std::string perk = sword.GetPerks(perks[perkNum], name);
+			std::cout << "Perk" << perkNum + 1 << ": " << perk << std::endl;
 		}
 	}
 }
