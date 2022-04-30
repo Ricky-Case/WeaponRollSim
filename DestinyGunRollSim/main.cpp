@@ -11,6 +11,7 @@ Weapon weapon;
 
 char PlayAgain();
 void PlayGame();
+void WaitForUser();
 
 //Entry point for the application...
 int main()
@@ -52,6 +53,7 @@ int main()
 	std::string blankInput;
 	std::cout << promptExit;
 	getline(std::cin, blankInput);
+	std::cout << clearTerminal;
 	return 0;
 }
 
@@ -70,7 +72,7 @@ char PlayAgain()
 {
 	std::string response;
 
-	std::cout << clearTerminal
+	std::cout << std::endl
 		<< promptGoAgain
 		<< promptInput;
 

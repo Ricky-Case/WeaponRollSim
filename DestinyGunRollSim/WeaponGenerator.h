@@ -30,28 +30,28 @@ class Pistol : public Weapon
 {
 public:
 	std::string GetPerks(char& perks, std::string& name) const;
-	void PrintPerks(char& perks[], Pistol& pistol);
+	void PrintPerks(char perks[], Pistol& pistol);
 };
 
 class Rifle : public Weapon
 {
 public:
 	std::string GetPerks(char& perks, std::string& name) const;
-	void PrintPerks(char& perks[], Rifle& rifle);
+	void PrintPerks(char perks[], Rifle& rifle);
 };
 
 class RocketLauncher : public Weapon
 {
 public:
 	std::string GetPerks(char& perks, std::string& name) const;
-	void PrintPerks(char& perks[], RocketLauncher& rocketLauncher);
+	void PrintPerks(char perks[], RocketLauncher& rocketLauncher);
 };
 
 class Sword : public Weapon
 {
 public:
 	std::string GetPerks(char& perks, std::string& name) const;
-	void PrintPerks(char& perks[], Sword& sword);
+	void PrintPerks(char perks[], Sword& sword);
 };
 
 #endif

@@ -21,10 +21,10 @@ void Weapon::MakeWeapon() const
 {
 	std::cout << clearTerminal
 		<< promptHeresYourWeapon;
-	
+
 	char perks[5];
 	WeaponTypes type = DetermineWeaponType();
-	
+
 	if (type == WeaponTypes::Pistol)
 	{
 		Pistol pistol;
@@ -68,7 +68,7 @@ std::string Pistol::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_hallowedBeThyName;
 			break;
-			
+
 		//Random Perks...
 		case ('\x1'):
 			return P_holdYourHorses;
@@ -97,7 +97,7 @@ std::string Pistol::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_diamondFire;
 			break;
-			
+
 		//Random Perks...
 		case ('\x1'):
 			return P_holdYourHorses;
@@ -114,16 +114,16 @@ std::string Pistol::GetPerks(char& perks, std::string& name) const
 	}
 }
 
-void Pistol::PrintPerks(char& perks[], Pistol& pistol)
+void Pistol::PrintPerks(char perks[], Pistol& pistol)
 {
 	int nameNum = pistol.GetNameNum();
-	
+
 	std::string name;
 	if (nameNum <= 50) { name = lPistolName; }
 	else { name = hPistolName; }
 
 	std::cout << "Pistol -- " << name << std::endl
-		<< std::endl;
+		<< std::endl
 		<< pistolDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
@@ -176,7 +176,7 @@ std::string Rifle::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_playerOne;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_infiniteWisdom;
@@ -205,7 +205,7 @@ std::string Rifle::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_intelligentDesign;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_infiniteWisdom;
@@ -222,7 +222,7 @@ std::string Rifle::GetPerks(char& perks, std::string& name) const
 	}
 }
 
-void Rifle::PrintPerks(char& perks[], Rifle& rifle)
+void Rifle::PrintPerks(char perks[], Rifle& rifle)
 {
 	int nameNum = rifle.GetNameNum();
 	std::string name;
@@ -231,7 +231,7 @@ void Rifle::PrintPerks(char& perks[], Rifle& rifle)
 	else { name = hRifleName; }
 
 	std::cout << "Rifle -- " << name << std::endl
-		<< std::endl;
+		<< std::endl
 		<< rifleDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
@@ -268,7 +268,7 @@ void Rifle::PrintPerks(char& perks[], Rifle& rifle)
 
 //**********ROCKET LAUNCHER FUNCTION DEFINITIONS**********//
 
-std::string RocketLauncher::GetPerks(char& perks, std::string& name)
+std::string RocketLauncher::GetPerks(char& perks, std::string& name) const
 {
 	if (name == lRocketName)
 	{
@@ -284,7 +284,7 @@ std::string RocketLauncher::GetPerks(char& perks, std::string& name)
 		case ('\x4'):
 			return P_playerOne;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_crowdControl;
@@ -313,7 +313,7 @@ std::string RocketLauncher::GetPerks(char& perks, std::string& name)
 		case ('\x4'):
 			return P_stockhold;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_crowdControl;
@@ -330,7 +330,7 @@ std::string RocketLauncher::GetPerks(char& perks, std::string& name)
 	}
 }
 
-void RocketLauncher::PrintPerks(char& perks[], RocketLauncher& rocketLauncher)
+void RocketLauncher::PrintPerks(char perks[], RocketLauncher& rocketLauncher)
 {
 	int nameNum = rocketLauncher.GetNameNum();
 	std::string name;
@@ -339,7 +339,7 @@ void RocketLauncher::PrintPerks(char& perks[], RocketLauncher& rocketLauncher)
 	else { name = hRocketName; }
 
 	std::cout << "Rocket Launcher -- " << name << std::endl
-		<< std::endl;
+		<< std::endl
 		<< rocketLauncherDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
@@ -392,7 +392,7 @@ std::string Sword::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_thousandCuts;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_occamsRazer;
@@ -421,7 +421,7 @@ std::string Sword::GetPerks(char& perks, std::string& name) const
 		case ('\x4'):
 			return P_harrowingStrike;
 			break;
-		
+
 		//Random Perks...
 		case ('\x1'):
 			return P_occamsRazer;
@@ -438,7 +438,7 @@ std::string Sword::GetPerks(char& perks, std::string& name) const
 	}
 }
 
-void Sword::PrintPerks(char& perks[], Sword& sword)
+void Sword::PrintPerks(char perks[], Sword& sword)
 {
 	int nameNum = sword.GetNameNum();
 	std::string name;
@@ -447,7 +447,7 @@ void Sword::PrintPerks(char& perks[], Sword& sword)
 	else { name = hSwordName; }
 
 	std::cout << "Sword -- " << name << std::endl
-		<< std::endl;
+		<< std::endl
 		<< swordDesign << std::endl;
 
 	for (int perkNum = 0; perkNum < 5; perkNum++)
