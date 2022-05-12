@@ -6,5 +6,5 @@ WeaponGen: main.o WeaponGenerator.o
 main.o: main.cpp
 	g++ -c main.cpp
 
-Term.o: WeaponGenerator.cpp WeaponGenerator.h
+WeaponGenerator.o: WeaponGenerator.cpp WeaponGenerator.h Strings.h
 	g++ -c WeaponGenerator.cpp
