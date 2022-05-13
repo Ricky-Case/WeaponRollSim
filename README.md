@@ -1,4 +1,4 @@
-# DestinyGunRollSim
+# GunRollSim
 Destiny-Style Weapon Perk Roll Simulator
 
 I originally created this program for fun, in 2018.
